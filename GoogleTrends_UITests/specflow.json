@@ -1,0 +1,11 @@
+﻿{
+  "bindingCulture": {
+    "language": "en-gb"
+  },
+  "language": {
+    "feature": "en-gb"
+  },
+  "pluginparameters": {
+    "variantkey": "Browser"
+  }
+}
