@@ -22,7 +22,7 @@ namespace GoogleTrends_UITests.FeatureFiles.StepClasses
         [Given(@"I have navigated to the Google Trends page")]
         public void GivenIHaveEnteredIntoTheSearchBarAndSelectedAnOptionFromTheSuggestionList()
         {
-            trendsPage = new TrendsPage(_driver, "https://trends.google.com/");
+            trendsPage = new TrendsPage(_driver);
             trendsPage.GetPageTitle().Should().Be("Trends");
         }
 

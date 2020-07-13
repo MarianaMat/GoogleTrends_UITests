@@ -16,6 +16,7 @@ namespace GoogleTrends_UITests.PageObjects
         public ExplorePage(IWebDriver driver) : base(driver)
         {
             _ngDriver = new NgWebDriver(driver);
+            log.Info("User navigates into Explore page");
             _ngDriver.WaitForAngular();
         }
         private readonly By GeoPickerXpath = By.XPath("//hierarchy-picker[@track-name='geoPicker']");
@@ -36,6 +37,7 @@ namespace GoogleTrends_UITests.PageObjects
         {
             _ngDriver.FindElement(GeoPickerXpath).Click();
             _ngDriver.FindElement(GeoInputXpath).SendKeys(geoInputValue);
+            log.Info($"User input '{geoInputValue}' to the Geo Picker");
             return this;
         }
 
@@ -51,6 +53,7 @@ namespace GoogleTrends_UITests.PageObjects
         public ExplorePage ClickOnSuggestionOption(string value)
         {
             GetElementOnSuggestionList(value).Click();
+            log.Info($"User clicks on '{value}' drop-list value ");
             return this;
         }
 

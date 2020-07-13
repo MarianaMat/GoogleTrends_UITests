@@ -45,6 +45,7 @@ namespace GoogleTrends_UITests
             }
             //_scenarioContext.ScenarioContainer.RegisterInstanceAs(_driver);
             _iObjectContainer.RegisterInstanceAs(_driver);
+            _driver.Url= "https://trends.google.com/";
             _driver.Manage().Window.Maximize();
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }

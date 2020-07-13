@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
 
-[assembly: Parallelizable(ParallelScope.Self)]
+[assembly: Parallelizable(ParallelScope.Fixtures)]
 [assembly: LevelOfParallelism(5)]
 
 

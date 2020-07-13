@@ -15,17 +15,14 @@ namespace GoogleTrends_UITests
     {
         private NgWebDriver _ngDriver;
 
-        public TrendsPage(IWebDriver driver, string URL) : base(driver)
+        public TrendsPage(IWebDriver driver) : base(driver)
         {
-            _ngDriver = new NgWebDriver(driver)
-            {
-                Url = URL
-            };
+            _ngDriver = new NgWebDriver(driver);
+            log.Info("User navigates into Trends page");
             _ngDriver.WaitForAngular();
         }
 
         private readonly By MainSearchLocator = By.Id("input-254");
-        private readonly By SearchAutoSuggestionDropListLocator = By.Id("ul-254");
         private readonly By HeaderTitleLocator = By.XPath("//a[contains(@class,'header-title')]/h1");
         public string GetPageTitle()
         {
@@ -36,6 +33,7 @@ namespace GoogleTrends_UITests
         public void FillInMainSearchInput(string searchQuery) 
         {
             _ngDriver.FindElement(MainSearchLocator).SendKeys(searchQuery);
+            log.Info($"User input '{searchQuery}' to the main search input");
             _ngDriver.WaitForAngular();
         }
 
