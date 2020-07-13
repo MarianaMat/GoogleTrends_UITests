@@ -22,7 +22,7 @@ namespace GoogleTrends_UITests
             _ngDriver.WaitForAngular();
         }
 
-        private readonly By MainSearchLocator = By.Id("input-254");
+        private readonly By MainSearchLocator = By.XPath("//div[@class = 'home-page-header-autocomplete-container']//input[@type = 'search']");
         private readonly By HeaderTitleLocator = By.XPath("//a[contains(@class,'header-title')]/h1");
         public string GetPageTitle()
         {
